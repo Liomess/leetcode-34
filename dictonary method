@@ -1,0 +1,18 @@
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        ans=[-1,-1]
+        fmap={}
+        for i in nums:
+            if i not in fmap:
+                fmap[i]=1
+            else:
+                fmap[i]+=1
+        if target not in fmap:
+            return ans
+        idx=nums.index(target)
+        ans=[idx,idx+fmap[target]-1]
+        return ans
+
+        
+
+        
